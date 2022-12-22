@@ -5,6 +5,7 @@ import { useEffect,useState } from 'react';
 import WeatherMap from "./WeatherMap";
 
 const WeatherMaps = () => {
+  const url = process.env.backend_url;
   // Declare state variables for the list of cities and the current page
   const [citiesList, setCitiesList] = useState([]);
   const [page, setPage] = useState(1);
@@ -33,7 +34,7 @@ const WeatherMaps = () => {
   // Define a function to get the data for the current page
   const getData = async () => {
     // Make a GET request to the /api/weather/page/:page route with the current page number
-    const response = await fetch(`http://localhost:5000/api/weather/page/${page}`, {
+    const response = await fetch(`${url}${page}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -51,7 +52,7 @@ const WeatherMaps = () => {
   useEffect(() => {
     const getData = async () => {
       // Make a GET request to the /api/weather/page/:page route with the current page number
-      const response = await fetch(`http://localhost:5000/api/weather/page/1`, {
+      const response = await fetch(`${url}1`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json"
