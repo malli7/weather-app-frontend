@@ -3,7 +3,6 @@ import React from "react";
 import { MapContainer, TileLayer,Popup,Marker } from 'react-leaflet'
 
 const WeatherMap = ({ citiesList }) => {
-  console.log(citiesList);
   
   return (
     <div>

@@ -5,7 +5,7 @@ import { useEffect,useState } from 'react';
 import WeatherMap from "./WeatherMap";
 
 const WeatherMaps = () => {
-  const url = process.env.backend_url;
+  const url = "https://weather-app-backend.onrender.com/api/weather/page/"
   // Declare state variables for the list of cities and the current page
   const [citiesList, setCitiesList] = useState([]);
   const [page, setPage] = useState(1);
